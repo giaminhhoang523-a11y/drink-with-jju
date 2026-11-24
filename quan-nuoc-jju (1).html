@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jju - trà sữa, trà trái cây và nước ép tươi ngon mỗi ngày.">
+  <title>Quán nước Jju | Dịu ngọt mỗi ngày</title>
+  <style>
+    :root{
+      --cream:#fff9f1; --pink:#f5c9c7; --rose:#b85e69; --brown:#49352f;
+      --green:#667b62; --muted:#806e66; --white:#fff; --line:#f0e4da;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--brown);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:#fff9f1eF;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-family:Georgia,serif;font-size:27px;font-weight:700;color:var(--rose);letter-spacing:.5px}
+    .brand span{color:var(--green)}
+    nav{display:flex;gap:26px;font-size:14px;font-weight:650}
+    nav a:hover{color:var(--rose)}
+    .hero{padding:76px 0 70px;background:radial-gradient(circle at 82% 20%,#f8ded5 0 13%,transparent 13.5%),linear-gradient(120deg,#fff1e7,#f9e1df 58%,#f1e8d8)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:35px}
+    .eyebrow{color:var(--green);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+    h1{font:700 clamp(42px,6vw,68px)/1.05 Georgia,serif;margin:14px 0 18px;letter-spacing:-1.5px}
+    h1 em{font-style:normal;color:var(--rose)}
+    .hero p{max-width:520px;color:#705b53;font-size:17px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-block;padding:12px 21px;border-radius:999px;background:var(--rose);color:white;font-weight:700;font-size:14px;box-shadow:0 8px 18px #b85e6928}
+    .btn.light{background:#fff;color:var(--rose);border:1px solid #efd3ce;box-shadow:none}
+    .cup-scene{min-height:330px;display:grid;place-items:center;position:relative}
+    .cup{width:190px;height:240px;position:relative;border-radius:20px 20px 48px 48px;background:linear-gradient(90deg,#d59a65,#f0c18d 48%,#c98758);border:7px solid #fff8e9;box-shadow:0 25px 45px #76513a2b;transform:rotate(-7deg)}
+    .cup:before{content:"";position:absolute;left:-13px;right:-13px;top:-15px;height:25px;border-radius:50%;background:#fff5df;border:5px solid #fff}
+    .cup:after{content:"JJU";position:absolute;inset:80px 0 auto;text-align:center;font:700 34px Georgia,serif;color:#fff8e9;letter-spacing:3px}
+    .straw{position:absolute;width:13px;height:125px;background:#b85e69;top:-112px;left:112px;transform:rotate(13deg);border-radius:8px}
+    .pearl{position:absolute;bottom:15px;left:34px;width:14px;height:14px;border-radius:50%;background:#57382e;box-shadow:25px 0 #57382e,50px 0 #57382e,75px 0 #57382e,12px -20px #57382e,62px -20px #57382e}
+    .spark{position:absolute;color:#b85e69;font-size:32px}.s1{top:40px;left:12%}.s2{right:10%;bottom:42px}
+    section{padding:74px 0}
+    .section-head{text-align:center;margin-bottom:34px}
+    .section-head h2{font:700 clamp(30px,4vw,42px) Georgia,serif;margin:7px 0;color:var(--brown)}
+    .section-head p{color:var(--muted);margin:0}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
+    .about-card{background:#f4e5d8;border-radius:26px;padding:34px;min-height:250px;display:flex;flex-direction:column;justify-content:center}
+    .about-card .big{font:700 58px Georgia,serif;color:var(--rose);line-height:1}
+    .about h2{font:700 36px Georgia,serif;margin:8px 0 14px}
+    .about p{color:var(--muted)}
+    .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+    .tag{background:white;border:1px solid var(--line);border-radius:30px;padding:7px 12px;font-size:12px;font-weight:700;color:var(--green)}
+    .menu-section{background:#fff}
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .menu-card{border:1px solid var(--line);border-radius:20px;padding:20px;background:#fffdf9;transition:.2s}
+    .menu-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px #5b38200e}
+    .drink-art{height:120px;border-radius:15px;display:grid;place-items:center;font-size:54px;margin-bottom:16px;background:linear-gradient(135deg,#f8e6d8,#f5d6d3)}
+    .menu-card h3{margin:0;font-size:18px}
+    .desc{font-size:13px;color:var(--muted);min-height:42px;margin:6px 0 12px}
+    .price-row{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed #e8d8cc;padding-top:12px}
+    .price{font-weight:800;color:var(--rose);font-size:17px}
+    .note{font-size:11px;color:var(--green);font-weight:700}
+    .notice{margin-top:24px;padding:15px 18px;border-radius:14px;background:#f4f0e7;color:#75665b;font-size:13px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{padding:23px;border-radius:18px;background:#f5e9df;text-align:center}
+    .feature .icon{font-size:28px}
+    .feature h3{margin:8px 0 4px;font-size:16px}
+    .feature p{margin:0;color:var(--muted);font-size:13px}
+    .contact{background:#52694f;color:white}
+    .contact .section-head h2,.contact .section-head p{color:white}
+    .contact-box{max-width:700px;margin:auto;text-align:center}
+    .contact-box p{color:#edf0e9}
+    .contact .btn{background:#fff;color:#52694f;box-shadow:none;margin-top:12px}
+    footer{text-align:center;padding:22px;color:#8b7970;font-size:12px}
+    @media(max-width:760px){
+      .nav{height:auto;min-height:68px;flex-wrap:wrap;padding:12px 0}
+      nav{width:100%;justify-content:space-between;gap:10px;font-size:12px}
+      .hero{padding:52px 0}
+      .hero-grid,.about{grid-template-columns:1fr}
+      .cup-scene{min-height:270px}
+      .menu-grid{grid-template-columns:repeat(2,1fr)}
+      .features{grid-template-columns:1fr}
+    }
+    @media(max-width:480px){.menu-grid{grid-template-columns:1fr}.menu-card{display:grid;grid-template-columns:90px 1fr;column-gap:14px}.drink-art{height:100%;min-height:105px;grid-row:span 3;font-size:40px}.desc{min-height:0}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home">jju<span>.</span></a>
+      <nav aria-label="Điều hướng chính">
+        <a href="#about">Về Jju</a><a href="#menu">Thực đơn</a><a href="#why">Điểm đặc biệt</a><a href="#contact">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Một chút ngọt ngào mỗi ngày</div>
+          <h1>Ghé Jju,<br><em>thưởng thức</em> niềm vui.</h1>
+          <p>Trà sữa thơm béo, nước ép tươi mát và những món nước được chuẩn bị chỉn chu. Jju mong mỗi chiếc ly đều mang đến cho bạn một khoảnh khắc thật dễ chịu.</p>
+          <div class="actions"><a class="btn" href="#menu">Xem thực đơn</a><a class="btn light" href="#about">Khám phá Jju</a></div>
+        </div>
+        <div class="cup-scene" aria-label="Minh hoạ ly trà sữa Jju">
+          <span class="spark s1">✦</span><span class="spark s2">✧</span>
+          <div class="cup"><div class="straw"></div><div class="pearl"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about">
+        <div>
+          <div class="eyebrow">Xin chào, chúng mình là</div>
+          <h2>Quán nước Jju</h2>
+          <p>Jju là góc nhỏ dành cho những ai yêu thích đồ uống ngon và không khí thân thiện. Từ ly trà sữa đậm vị đến nước ép trái cây thanh mát, chúng mình luôn ưu tiên hương vị hài hòa và nguyên liệu được chọn lựa cẩn thận.</p>
+          <p>Dù bạn cần một món uống để nạp năng lượng, hay chỉ muốn tự thưởng cho mình chút ngọt ngào, Jju luôn vui khi được phục vụ bạn!</p>
+          <div class="tags"><span class="tag">Pha chế tươi</span><span class="tag">Vị ngọt tuỳ chỉnh</span><span class="tag">Thân thiện mỗi ngày</span></div>
+        </div>
+        <div class="about-card"><div class="big">Jju ♡</div><h3>Ngon từ ngụm đầu tiên</h3><p>Một chiếc hẹn nhỏ, một món nước hợp gu, một ngày vui hơn.</p></div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Made with love</div><h2>Menu nhà Jju</h2><p>Chọn món bạn thích và để Jju chăm chút phần còn lại.</p></div>
+        <h3>🧋 Trà sữa & trà trái cây</h3>
+        <div class="menu-grid">
+          <article class="menu-card"><div class="drink-art">🧋</div><div><h3>Trà sữa truyền thống</h3><p class="desc">Trà thơm đậm vị, sữa béo dịu, dễ uống.</p><div class="price-row"><span class="price">25.000đ</span><span class="note">Món quen nhà Jju</span></div></div></article>
+          <article class="menu-card"><div class="drink-art">🍵</div><div><h3>Trà sữa matcha</h3><p class="desc">Matcha thơm nhẹ, hậu vị thanh và béo vừa.</p><div class="price-row"><span class="price">30.000đ</span><span class="note">Thơm vị trà xanh</span></div></div></article>
+          <article class="menu-card"><div class="drink-art">🍫</div><div><h3>Trà sữa socola</h3><p class="desc">Vị cacao ngọt ngào dành cho tín đồ socola.</p><div class="price-row"><span class="price">30.000đ</span><span class="note">Đậm đà, ngọt ngào</span></div></div></article>
+          <article class="menu-card"><div class="drink-art">🍓</div><div><h3>Trà dâu</h3><p class="desc">Trà thanh mát kết hợp hương dâu chua ngọt.</p><div class="price-row"><span class="price">28.000đ</span><span class="note">Chua ngọt dễ mê</span></div></div></article>
+          <article class="menu-card"><div class="drink-art">🍑</div><div><h3>Trà đào cam sả</h3><p class="desc">Đào thơm, cam tươi và sả dịu nhẹ.</p><div class="price-row"><span class="price">30.000đ</span><span class="note">Thanh mát</span></div></div></article>
+          <article class="menu-card"><div class="drink-art">🧋</div><div><h3>Trà sữa trân châu đường đen</h3><p class="desc">Sữa thơm béo cùng trân châu dai mềm.</p><div class="price-row"><span class="price">32.000đ</span><span class="note">Best seller gợi ý</span></div></div></article>
+        </div>
+        <h3 style="margin-top:38px">🍊 Nước ép tươi</h3>
+        <div class="menu-grid">
+          <article class="menu-card"><div class="drink-art">🍊</div><div><h3>Ép cam tươi</h3><p class="desc">Cam tươi nguyên vị, chua ngọt tự nhiên.</p><div class="price-row"><span class="price">25.000đ</span><span class="note">Giàu vị tươi mát</span></div></div></article>
+          <article class="menu-card"><div class="drink-art">🥕</div><div><h3>Ép cà rốt</h3><p class="desc">Vị ngọt dịu tự nhiên, thơm nhẹ dễ uống.</p><div class="price-row"><span class="price">25.000đ</span><span class="note">Không thêm màu</span></div></div></article>
+          <article class="menu-card"><div class="drink-art">🍉</div><div><h3>Ép dưa hấu</h3><p class="desc">Mát lành, ngọt dịu, hợp ngày nắng.</p><div class="price-row"><span class="price">25.000đ</span><span class="note">Giải khát cực đã</span></div></div></article>
+          <article class="menu-card"><div class="drink-art">🍍</div><div><h3>Ép thơm</h3><p class="desc">Thơm (dứa) chua ngọt, hương vị nhiệt đới.</p><div class="price-row"><span class="price">25.000đ</span><span class="note">Tươi ngon mỗi ly</span></div></div></article>
+          <article class="menu-card"><div class="drink-art">🥑</div><div><h3>Sinh tố bơ</h3><p class="desc">Bơ xay sánh mịn, béo thơm hấp dẫn.</p><div class="price-row"><span class="price">32.000đ</span><span class="note">Béo mịn</span></div></div></article>
+          <article class="menu-card"><div class="drink-art">🍋</div><div><h3>Chanh mật ong</h3><p class="desc">Chua dịu, thơm mật ong, uống mát lạnh.</p><div class="price-row"><span class="price">22.000đ</span><span class="note">Nhẹ nhàng, dễ uống</span></div></div></article>
+        </div>
+        <div class="notice">* Giá trên là giá tham khảo để bạn dễ hình dung. Bạn có thể điều chỉnh theo giá bán thực tế của quán. Mức đường, đá và topping có thể tuỳ chọn khi đặt món; topping thêm có thể tính phí riêng.</div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Điều Jju luôn trân trọng</div><h2>Mỗi ly nước, một chút yêu thương</h2><p>Jju muốn bạn luôn tìm thấy món uống hợp với tâm trạng của mình.</p></div>
+        <div class="features">
+          <div class="feature"><div class="icon">🍃</div><h3>Nguyên liệu chọn lọc</h3><p>Ưu tiên nguyên liệu có nguồn gốc rõ ràng và trái cây tươi.</p></div>
+          <div class="feature"><div class="icon">🥤</div><h3>Pha chế theo gu</h3><p>Có thể chọn mức đường, đá và thêm topping yêu thích.</p></div>
+          <div class="feature"><div class="icon">💗</div><h3>Phục vụ tận tâm</h3><p>Luôn mong mỗi lần ghé Jju đều là một trải nghiệm vui.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-box">
+        <div class="section-head"><div class="eyebrow" style="color:#e7d7b9">Let's have a drink</div><h2>Hẹn bạn tại Jju nhé!</h2><p>Ghé quán để chọn món yêu thích và thưởng thức một ngày thật dễ thương.</p></div>
+        <p><strong>Địa chỉ:</strong> [Thêm địa chỉ quán tại đây]</p>
+        <p><strong>Giờ mở cửa:</strong> [Thêm giờ hoạt động]</p>
+        <p><strong>Đặt món:</strong> [Thêm số điện thoại / Zalo]</p>
+        <a class="btn" href="#menu">Chọn món ngay</a>
+      </div>
+    </section>
+  </main>
+  <footer>© 2026 Quán nước Jju · Made with ♡</footer>
+</body>
+</html>
